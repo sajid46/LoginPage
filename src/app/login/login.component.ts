@@ -20,8 +20,6 @@ loginForm!: FormGroup;
   });
   }
 
-  submit(): void{
-
-  }
+  submit(){}
 
 }
