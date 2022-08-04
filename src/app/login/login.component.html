@@ -1,0 +1,98 @@
+<div class="flex-container">
+  <div class="login">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div class="form-group item">
+        <h3 class="mb-4">Welcome to <span>mySite</span></h3>
+
+        <div>
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <!-- <label for="username">Username (email address)</label> -->
+          <input
+            name="username"
+            type="email"
+            id="username"
+            class="form-control"
+            formControlName="username"
+            autocomplete="off"
+          />
+        </div>
+        <div style="position: absolute">
+          <small
+            class="input-invalid"
+            *ngIf="
+              loginForm.get('username')?.touched &&
+              !loginForm.get('username')?.errors
+            "
+            >Username is required</small
+          >
+          <small class="input-invalid" *ngIf="loginForm.get('username')?.invalid"
+            >Username is invalid</small
+          >
+        </div>
+      </div>
+      <div class="form-group item">
+        <div>
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <!-- <label for="Password">Password</label> -->
+          <input
+            name="Password"
+            type="password"
+            id="password"
+            class="form-control"
+            formControlName="password"
+            autocomplete="off"
+          />
+        </div>
+        <div style="position: absolute">
+          <small
+            class="input-invalid"
+            *ngIf="
+              loginForm.get('password')?.touched &&
+              loginForm.get('password')?.invalid
+            "
+            >Password is required</small
+          >
+        </div>
+      </div>
+
+      <div class="form-group pull-right item">
+        <span>
+          <input
+            id="chkRememberMe"
+            type="checkbox"
+            name="chkRememberMe"
+            style="margin-right: 8px"
+          />
+          <label for="chkRememberMe">Remember Me</label></span
+        >
+      </div>
+
+      <div class="form-group mt-5 item item-submit-button">
+        <input
+          type="submit"
+          name="submit"
+          value="Log In"
+          id="submit"
+          class="btn btn-primary"
+        />
+      </div>
+
+      <div id="divSupport item item-contact-support" class="reset-password">
+        <p class="text-center">
+          <a href="#">Reset password</a>
+          <span class="inline-seperator"> | </span>
+          <a href="#">Contact Support</a>
+        </p>
+      </div>
+
+      <div class="item item-terms">
+        <p class="text-center">
+          <small class="help-block">
+            By logging in, you agree to our <a href="#">Terms of Service</a> and
+            <a href="#">Privacy Policy</a>.
+          </small>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

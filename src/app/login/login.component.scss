@@ -1,0 +1,69 @@
+@import "../../variables.scss";
+
+@media screen and (max-width: 360px) {
+}
+
+.flex-container {
+
+  height: $bodyHeight;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 365px;
+.login {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1b1f2d+11,717887+96 */
+background: #1b1f2d; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #1b1f2d 11%, #717887 96%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #1b1f2d 11%,#717887 96%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #1b1f2d 11%,#717887 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b1f2d', endColorstr='#717887',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    font-weight: lighter;
+    min-width: 350px;
+    padding: 20px;
+    justify-self: center;
+    color: white;
+
+    .item:nth-child(2)
+    {
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    i{
+      position: absolute;
+    color: #929b98;
+    margin: 11px;
+    }
+
+    input[type=email], input[type=password] {
+      border-radius: 0px !important;
+      padding-left: 30px;
+    }
+
+    input[type=submit]{
+      border-radius: 0px !important;
+    }
+
+    .reset-password{
+      border: 1px solid rgba(59, 64, 75, 0.968627451);
+      padding: 3px 10px 0px 5px;
+      background: #4d4637;
+      margin-top: 15px;
+      height: 33px;
+      margin-bottom: 10px;
+      a{
+        color: white !important;
+      }
+    }
+
+a{
+  color: #7ebfe5 !important;
+  text-decoration: none;
+}
+
+    .input-invalid {
+      color: #e7ab3a !important;
+    }
+  }
+}
