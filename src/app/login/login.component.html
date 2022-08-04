@@ -1,12 +1,12 @@
-<div class="flex-container">
-  <div class="login">
-    <form [formGroup]="loginForm" (ngSubmit)="submit()">
-      <div class="form-group item">
-        <h3 class="mb-4">Welcome to <span>mySite</span></h3>
+<div id="main"class="flex-container">
+  <div id="login" class="login">
+    <form id="userLoginForm" [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div id="div1" class="form-group item">
+        <h1 class="mb-4">Welcome to <span>mySite</span></h1>
 
-        <div>
+        <div id="div1-1" >
           <i class="fa fa-user" aria-hidden="true"></i>
-          <!-- <label for="username">Username (email address)</label> -->
+          <label for="username" style="display: none;">Username (email address)</label>
           <input
             name="username"
             type="email"
@@ -14,9 +14,11 @@
             class="form-control"
             formControlName="username"
             autocomplete="off"
+            placeholder="Valid email address"
           />
         </div>
-        <div style="position: absolute">
+
+        <div id="div1-2" style="position: absolute">
           <small
             class="input-invalid"
             *ngIf="
@@ -30,10 +32,10 @@
           >
         </div>
       </div>
-      <div class="form-group item">
-        <div>
+      <div id="div2" class="form-group item">
+        <div id="div2-1" >
           <i class="fa fa-lock" aria-hidden="true"></i>
-          <!-- <label for="Password">Password</label> -->
+          <label for="password" style="display: none;">Password (minimum length 8 characters</label>
           <input
             name="Password"
             type="password"
@@ -41,21 +43,42 @@
             class="form-control"
             formControlName="password"
             autocomplete="off"
+            placeholder="Password (minimum length 8 characters)"
           />
         </div>
-        <div style="position: absolute">
+        <div id="div2-2" style="position: absolute">
           <small
             class="input-invalid"
             *ngIf="
               loginForm.get('password')?.touched &&
-              loginForm.get('password')?.invalid
+              !loginForm.get('password')?.dirty
             "
             >Password is required</small
           >
         </div>
+        <div id="div2-2" style="position: absolute">
+          <small
+            class="input-invalid"
+            *ngIf="
+              loginForm.get('password')?.touched &&
+              loginForm.get('password')?.dirty &&
+              loginForm.get('password')?.invalid
+            "
+            >Password is invalid</small
+          >
+        </div>
+        <!-- <div id="div2-2" style="position: absolute">
+          <small
+            class="input-invalid"
+            *ngIf="
+              loginForm.get('password')?.errors?.maxlength
+            "
+            >Password is required</small
+          >
+        </div> -->
       </div>
 
-      <div class="form-group pull-right item">
+      <div id="div3" class="form-group pull-right item">
         <span>
           <input
             id="chkRememberMe"
@@ -67,7 +90,7 @@
         >
       </div>
 
-      <div class="form-group mt-5 item item-submit-button">
+      <div id="div4" class="form-group mt-5 item item-submit-button">
         <input
           type="submit"
           name="submit"
@@ -77,7 +100,7 @@
         />
       </div>
 
-      <div id="divSupport item item-contact-support" class="reset-password">
+      <div id="div5" id="divSupport item item-contact-support" class="reset-password">
         <p class="text-center">
           <a href="#">Reset password</a>
           <span class="inline-seperator"> | </span>
@@ -85,7 +108,7 @@
         </p>
       </div>
 
-      <div class="item item-terms">
+      <div id="div6" class="item item-terms">
         <p class="text-center">
           <small class="help-block">
             By logging in, you agree to our <a href="#">Terms of Service</a> and
