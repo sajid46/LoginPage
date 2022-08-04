@@ -23,7 +23,7 @@
             class="input-invalid"
             *ngIf="
               loginForm.get('username')?.touched &&
-              !loginForm.get('username')?.errors
+              loginForm.get('username')?.valid
             "
             >Username is required</small
           >
@@ -46,25 +46,15 @@
             placeholder="Password (minimum length 8 characters)"
           />
         </div>
+
         <div id="div2-2" style="position: absolute">
           <small
             class="input-invalid"
             *ngIf="
-              loginForm.get('password')?.touched &&
-              !loginForm.get('password')?.dirty
+            loginForm.get('password')?.touched
+            && loginForm.get('password')?.invalid
             "
-            >Password is required</small
-          >
-        </div>
-        <div id="div2-2" style="position: absolute">
-          <small
-            class="input-invalid"
-            *ngIf="
-              loginForm.get('password')?.touched &&
-              loginForm.get('password')?.dirty &&
-              loginForm.get('password')?.invalid
-            "
-            > Password must be min. 8 charcaters long</small
+            > Password required (min. 8 charcaters)</small
           >
         </div>
         <!-- <div id="div2-2" style="position: absolute">
