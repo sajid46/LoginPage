@@ -14,7 +14,7 @@
             class="form-control"
             formControlName="username"
             autocomplete="off"
-            placeholder="Valid email address"
+            placeholder="Email address"
           />
         </div>
 
@@ -23,7 +23,7 @@
             class="input-invalid"
             *ngIf="
               loginForm.get('username')?.touched &&
-              loginForm.get('username')?.valid
+              !loginForm.get('username')?.errors
             "
             >Username is required</small
           >
@@ -43,29 +43,19 @@
             class="form-control"
             formControlName="password"
             autocomplete="off"
-            placeholder="Password (minimum length 8 characters)"
+            placeholder="Password (minimum length {{passwordLength}} characters)"
+            (keyup)="onkeyup($event)"
           />
         </div>
 
         <div id="div2-2" style="position: absolute">
           <small
             class="input-invalid"
-            *ngIf="
-            loginForm.get('password')?.touched
-            && loginForm.get('password')?.invalid
-            "
-            > Password required (min. 8 charcaters)</small
+            *ngIf="validPassword !== ''"
+            >
+            {{validPassword}}</small
           >
         </div>
-        <!-- <div id="div2-2" style="position: absolute">
-          <small
-            class="input-invalid"
-            *ngIf="
-              loginForm.get('password')?.errors?.maxlength
-            "
-            >Password is required</small
-          >
-        </div> -->
       </div>
 
       <div id="div3" class="form-group pull-right item">
